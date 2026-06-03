@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import pyodbc
+from db_connection import get_connection
 
 app = FastAPI()
 
@@ -10,12 +10,7 @@ class EmployeeRequest(BaseModel):
 @app.post("/getage")
 def get_age(employee: EmployeeRequest):
 
-    conn = pyodbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};"
-        "SERVER=.\\SQLEXPRESS;"
-        "DATABASE=employee;"
-        "Trusted_Connection=yes;"
-    )
+    conn = get_connection()
 
     cursor = conn.cursor()
 
@@ -29,7 +24,9 @@ def get_age(employee: EmployeeRequest):
     conn.close()
 
     if row:
-        return {"age": row[0]}
+        return {
+            "age": row[0]
+        }
 
     raise HTTPException(
         status_code=404,
