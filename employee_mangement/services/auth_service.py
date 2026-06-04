@@ -1,13 +1,13 @@
 from sqlalchemy.orm import Session
 
-from models.user_model import User
+from employee_mangement.models.user_model import User
 
-from utils.password_handler import (
+from employee_mangement.utils.password_handler import (
     hash_password,
     verify_password
 )
 
-from utils.jwt_handler import (
+from employee_mangement.utils.jwt_handler import (
     create_access_token
 )
 
