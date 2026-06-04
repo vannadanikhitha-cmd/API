@@ -1,4 +1,4 @@
-from models.employee_model import Employee
+from employee_mangement.models.employee_model import Employee
 
 def create_employee(
     db,
