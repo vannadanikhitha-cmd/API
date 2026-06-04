@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker
 
-from database.connection import engine
+from employee_mangement.database.connection import engine
 
 SessionLocal = sessionmaker(
     autocommit=False,
