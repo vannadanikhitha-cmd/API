@@ -1,16 +1,17 @@
 from fastapi import FastAPI
-import os
 from fastapi.staticfiles import StaticFiles
+import os
 
+from employee_mangement.database.connection import engine
+from employee_mangement.models.employee_model import Base
 
-from database.connection import engine
-
-from models.employee_model import Base
-
-from routers.auth_router import router as auth_router
-from routers.employee_router import router as employee_router
-from routers.page_router import router as page_router
-
+from employee_mangement.routers.auth_router import router as auth_router
+from employee_mangement.routers.employee_router import router as employee_router
+from employee_mangement.routers.page_router import router as page_router
+from employee_mangement.models.employee_model import Employee
+from employee_mangement.models.user_model import User
+from employee_mangement.models.base import Base
+Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="Employee Management System"
 )
@@ -36,30 +37,8 @@ app.include_router(page_router)
 
 Base.metadata.create_all(bind=engine)
 
-@app.get("/")
-def home():
-
-    return {
-        "message":
-        "Employee Management System"
-    }
-
-
 @app.get("/health")
 def health():
-
     return {
-        "status":
-        "running"
+        "status": "running"
     }
-
-
-if __name__ == "__main__":
-    import uvicorn
-
-    uvicorn.run(
-        "app:app",
-        host="127.0.0.1",
-        port=8000,
-        reload=True
-    )
