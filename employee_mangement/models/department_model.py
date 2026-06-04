@@ -2,7 +2,7 @@ from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
 
-from models.employee_model import Base
+from employee_mangement.models.employee_model import Base
 
 class Department(Base):
 

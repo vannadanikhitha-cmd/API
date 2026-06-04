@@ -4,9 +4,7 @@ from sqlalchemy import String
 from sqlalchemy import Float
 from sqlalchemy import Date
 
-from sqlalchemy.orm import declarative_base
-
-Base = declarative_base()
+from employee_mangement.models.base import Base
 
 class Employee(Base):
 

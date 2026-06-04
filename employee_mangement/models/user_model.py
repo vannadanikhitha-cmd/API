@@ -2,7 +2,7 @@ from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
 
-from models.base import Base
+from employee_mangement.models.base import Base
 
 class User(Base):
 
