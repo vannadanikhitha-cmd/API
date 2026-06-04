@@ -4,14 +4,14 @@ from fastapi import HTTPException
 
 from sqlalchemy.orm import Session
 
-from database.session import get_db
+from employee_mangement.database.session import get_db
 
-from schemas.user_schema import (
+from employee_mangement.schemas.user_schema import (
     UserRegister,
     UserLogin
 )
 
-from services.auth_service import (
+from employee_mangement.services.auth_service import (
     register_user,
     login_user
 )

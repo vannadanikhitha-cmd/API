@@ -16,15 +16,14 @@ templates = Jinja2Templates(
         "templates"
     )
 )
-
-@router.get("/")
-async def login_page(request: Request):
+@router.get("/login")
+def login_page(request: Request):
     return templates.TemplateResponse(
-        "login.html",
-        {
-            "request": request
-        }
+        request=request,
+        name="login.html",
+        context={"request": request}
     )
+
 
 @router.get("/dashboard")
 async def dashboard(request: Request):
