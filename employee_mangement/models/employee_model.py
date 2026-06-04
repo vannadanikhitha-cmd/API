@@ -1,11 +1,12 @@
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
+from sqlalchemy import Float
 from sqlalchemy import Date
-from sqlalchemy import Numeric
-from sqlalchemy import ForeignKey
 
-from models.base import Base
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()
 
 class Employee(Base):
 
@@ -18,41 +19,44 @@ class Employee(Base):
     )
 
     first_name = Column(
-        String(50),
+        String(100),
         nullable=False
     )
 
     last_name = Column(
-        String(50)
+        String(100),
+        nullable=False
     )
 
     email = Column(
         String(100),
-        unique=True,
-        nullable=False
+        unique=True
     )
 
     phone = Column(
-        String(15)
+        String(20)
     )
 
     gender = Column(
-        String(10)
+        String(20)
     )
 
-    age = Column(Integer)
+    age = Column(
+        Integer
+    )
 
     designation = Column(
         String(100)
     )
 
-    joining_date = Column(Date)
+    joining_date = Column(
+        Date
+    )
 
     salary = Column(
-        Numeric(10,2)
+        Float
     )
 
     department_id = Column(
-        Integer,
-        ForeignKey("departments.department_id")
+        Integer
     )

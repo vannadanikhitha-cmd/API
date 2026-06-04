@@ -22,7 +22,7 @@ class UserLogin(BaseModel):
 
 class UserResponse(BaseModel):
 
-    id: int
+    user_id: int
 
     username: str
 

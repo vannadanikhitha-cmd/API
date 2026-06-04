@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Add Employee</h2>
+
+<form id="employeeForm">
+
+<input type="text"
+       id="first_name"
+       placeholder="First Name">
+
+<input type="text"
+       id="last_name"
+       placeholder="Last Name">
+
+<input type="email"
+       id="email"
+       placeholder="Email">
+
+<input type="text"
+       id="phone"
+       placeholder="Phone">
+
+<input type="number"
+       id="age"
+       placeholder="Age">
+
+<input type="text"
+       id="designation"
+       placeholder="Designation">
+
+<input type="date"
+       id="joining_date">
+
+<input type="number"
+       id="salary"
+       placeholder="Salary">
+
+<input type="number"
+       id="department_id"
+       placeholder="Department ID">
+
+<button type="button"
+        onclick="saveEmployee()">
+
+Save
+
+</button>
+
+</form>
+
+<script src="/static/js/employee.js"></script>
+
+{% endblock %}

@@ -3,7 +3,7 @@ from urllib.parse import quote_plus
 
 params = quote_plus(
     "DRIVER={ODBC Driver 17 for SQL Server};"
-    "SERVER=SIVA\\SQLEXPRESS;"
+    "SERVER=.\\SQLEXPRESS;"
     "DATABASE=employee_management;"
     "Trusted_Connection=yes;"
     "TrustServerCertificate=yes;"
