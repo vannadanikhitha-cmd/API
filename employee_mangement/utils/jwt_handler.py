@@ -4,7 +4,7 @@ from jose import JWTError
 from datetime import datetime
 from datetime import timedelta
 
-from config.settings import settings
+from employee_mangement.config.settings import settings
 
 def create_access_token(data: dict):
 
