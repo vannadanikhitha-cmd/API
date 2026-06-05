@@ -1,9 +1,12 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from employee_mangement.database.session import get_db
+
 from employee_mangement.database.session import get_db
 
-from employee_mangement.schemas.employee_schema import EmployeeCreate
+from employee_mangement.schemas.employee_schema import (
+    EmployeeCreate,
+    EmployeeResponse
+)
 
 from employee_mangement.services.employee_service import (
     create_employee,
