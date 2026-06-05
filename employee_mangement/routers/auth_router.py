@@ -42,7 +42,8 @@ def register(
         )
 
     return {
-        "message": "User Registered Successfully"
+        "username":user.username,
+        "role":user.role
     }
 
 
